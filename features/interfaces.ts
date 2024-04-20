@@ -1,21 +1,28 @@
-interface Vehicle {
-  model: string;
-  year: number;
-  broken: true;
+interface Reportable {
   summary(): void;
 }
 
-const oldCiviv: Vehicle = {
+const oldCiviv = {
   model: "RR677",
   year: 2000,
   broken: true,
   summary() {
-    console.log("Summary Printed");
+    console.log("Summary Printed: CIVIC");
   },
 };
 
-const printVehicle = (vehicle: Vehicle): void => {
-  vehicle.summary();
+const juice = {
+  color: "yellow",
+  carbonated: true,
+  price: 40,
+  summary() {
+    console.log("Summary Printed: JUICE");
+  },
 };
 
-printVehicle(oldCiviv);
+const printSummary = (item: Reportable): void => {
+  item.summary();
+};
+
+printSummary(oldCiviv);
+printSummary(juice);
