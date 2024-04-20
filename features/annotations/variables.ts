@@ -16,3 +16,23 @@ let point: { x: number; y: string } = {
 const logNumber: (i: number) => void = (i) => {
   console.log(i);
 };
+
+// When to use annotations
+// 1) When a function returns a an type
+const json = '{"x":5,"y":40}';
+const cordinates: { x: number; y: number } = JSON.parse(json); // suru ma any return garthyo
+
+// 2) Variable declared but not initialized;
+let words = ["red", "green"]; // Type cha
+// let test; // any cha
+let testWithType: []; // aba array
+
+// 3) Variable whose type cannot be inferred correctly
+let numbers = [-10, -1, 12];
+let numberAboveZero: boolean | number = false;
+
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] > 0) {
+    numberAboveZero = numbers[i];
+  }
+}
