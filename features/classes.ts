@@ -11,3 +11,13 @@ class Vehicle {
 const vehicle = new Vehicle();
 vehicle.drive();
 vehicle.honk();
+
+class Car extends Vehicle {
+  honk(): void {
+    console.log("Beep");
+  }
+}
+
+const car = new Car();
+
+car.honk();
