@@ -19,11 +19,14 @@ console.log(vehicle.color);
 // vehicle.drive();
 
 class Car extends Vehicle {
+  constructor(public wheels: number, color: string) {
+    super(color);
+  }
   public driveTest(): void {
     this.drive();
     this.honk();
   }
 }
 
-const car = new Car("green");
+const car = new Car(4, "green");
 car.driveTest();
