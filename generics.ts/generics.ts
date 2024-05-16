@@ -22,3 +22,24 @@ class ArrayOfAnything<T> {
 }
 
 new ArrayOfAnything<string>(["a", "g", "g"]);
+new ArrayOfAnything(["a", "g", "g", 5, 6]);
+
+// Generics with functions
+
+const printStrings = (arr: string[]): void => {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+  }
+};
+const printNumbers = (arr: number[]): void => {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+  }
+};
+const printAnything = <T>(arr: T[]) => {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+  }
+};
+
+printAnything(["t", "t", "ff"]);
