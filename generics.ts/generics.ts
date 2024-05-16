@@ -43,3 +43,25 @@ const printAnything = <T>(arr: T[]) => {
 };
 
 printAnything(["t", "t", "ff"]);
+
+// Generic Constraints
+class Animal {
+  print(): void {
+    console.log("I am a animal");
+  }
+}
+class Human {
+  print(): void {
+    console.log("I am a human");
+  }
+}
+
+interface Printable {
+  print(): void;
+}
+
+function printAnimalorHuman<T extends Printable>(arr: T[]): void {
+  for (let i = 0; i < arr.length; i++) {
+    arr[i].print();
+  }
+}
